@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get API</title>
+</head>
+
+<body>
+    <main>
+        <section>
+            <h1>API</h1>
+            <h2>Application Programming Interface</h2>
+        </section>
+        <section>
+            <ul id="user-container">
+
+            </ul>
+        </section>
+    </main>
+    <script>
+        //get api from friend site set the value
+        fetch('https://jsonplaceholder.typicode.com/users')
+            .then(response => response.json())
+            .then(json => displayUser(json));
+
+        //create function for show display user information
+        function displayUser(user) {
+            //get object value use by map method;
+            const userName = user.map(user => user.name);
+            // append child inside ul tag
+            const ul = document.getElementById('user-container');
+            for (let i = 0; i < userName.length; i++) {
+                const username = userName[i];
+                //create li tag using dom
+                const li = document.createElement('li');
+                //set li tag value use innerText
+                li.innerText = username;
+                //append li inside ul tag use js built in function
+                ul.appendChild(li);
+            }
+        }
+    </script>
+</body>
+
+</html>
