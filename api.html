@@ -20,11 +20,17 @@
         </section>
     </main>
     <script>
+        //get status code like as 404=no-found, 500=internal server error, 200=ok, search google;
+        //what is HTTP= Hypertext Transfer Protocol
+        //Get Method vs Post Method;
+        //Interview common question Get vs Post method;
+
+
         //get api from friend site set the value
         fetch('https://jsonplaceholder.typicode.com/users')
             .then(response => response.json())
             .then(json => displayUser(json))
-            .catch(error=>console.log(error)); //catch is built in function it is use for get any error;
+            .catch(error => console.log(error)); //catch is built in function it is use for get any error;
 
 
         //create function for show display user information
