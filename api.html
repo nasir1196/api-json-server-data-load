@@ -23,7 +23,9 @@
         //get api from friend site set the value
         fetch('https://jsonplaceholder.typicode.com/users')
             .then(response => response.json())
-            .then(json => displayUser(json));
+            .then(json => displayUser(json))
+            .catch(error=>console.log(error)); //catch is built in function it is use for get any error;
+
 
         //create function for show display user information
         function displayUser(user) {
